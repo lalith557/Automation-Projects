@@ -1,0 +1,19 @@
+# Operating system files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# VS Code
+.vscode/
+
+# Temporary files
+*.tmp
+*.temp
+*.log
+
+# Backup files
+*.bak
+
+# Python cache
+__pycache__/
+*.pyc
