@@ -504,4 +504,4 @@ Move salary classification thresholds into a configuration file so business rule
 
 ## Author
 
-Developed as part of an Automation Anywhere RPA portfolio, demonstrating practical experience with Excel automation, structured data processing, workflow design, and business-rule implementation.
+Developed as part of an Automation Anywhere RPA portfolio, demonstrating practical experience with Excel automation, structured data processing, workflow design, and business-rule implementation. And it is done by me.
