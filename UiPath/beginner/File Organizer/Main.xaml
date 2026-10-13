@@ -1,0 +1,627 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" VisualBasic.Settings="{x:Null}" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:si="clr-namespace:System.IO;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>UiPath.Shared.Activities.Business</x:String>
+      <x:String>UiPath.FTP.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.Watcher</AssemblyReference>
+      <AssemblyReference>System.IO.Packaging</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.AccessControl</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.FTP.Activities</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Main Sequence">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="SourceFolder" />
+      <Variable x:TypeArguments="x:String" Name="OrganizedFolder" />
+      <Variable x:TypeArguments="x:String" Name="Extension" />
+      <Variable x:TypeArguments="x:String" Name="DestinationFolder" />
+      <Variable x:TypeArguments="x:String" Name="DestinationFile" />
+      <Variable x:TypeArguments="x:Int32" Default="0" Name="CollisionIndex" />
+      <Variable x:TypeArguments="x:Int32" Default="0" Name="FilesTotal" />
+      <Variable x:TypeArguments="x:Int32" Default="0" Name="FilesMoved" />
+      <Variable x:TypeArguments="x:Int32" Default="0" Name="FilesRenamed" />
+      <Variable x:TypeArguments="x:Int32" Default="0" Name="FilesSkipped" />
+      <Variable x:TypeArguments="x:Int32" Default="0" Name="FilesFailed" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Assign DisplayName="Set Source Folder (Assign)">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[SourceFolder]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">["C:\Users\ASUS\Downloads"]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign DisplayName="Set Organized Folder (Assign)">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[OrganizedFolder]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[System.IO.Path.Combine(SourceFolder, "Organized")]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <If Condition="[Not System.IO.Directory.Exists(SourceFolder)]" DisplayName="Validate Source Folder (If)">
+      <If.Then>
+        <Sequence DisplayName="Source Folder Missing">
+          <ui:LogMessage DisplayName="Log Missing Source Folder" Level="Error" Message="[&quot;Source folder does not exist: &quot; &amp; SourceFolder]" />
+          <Throw DisplayName="Stop Workflow (Throw)" Exception="[New System.IO.DirectoryNotFoundException(&quot;Source folder does not exist: &quot; &amp; SourceFolder)]" />
+        </Sequence>
+      </If.Then>
+    </If>
+    <ui:CreateDirectory ContinueOnError="{x:Null}" Output="{x:Null}" DisplayName="Create Organized Folder (Create Folder)" Path="[OrganizedFolder]" />
+    <ui:CreateDirectory ContinueOnError="{x:Null}" Output="{x:Null}" DisplayName="Create PDF Folder (Create Folder)" Path="[System.IO.Path.Combine(OrganizedFolder, &quot;PDF&quot;)]" />
+    <ui:CreateDirectory ContinueOnError="{x:Null}" Output="{x:Null}" DisplayName="Create Word Folder (Create Folder)" Path="[System.IO.Path.Combine(OrganizedFolder, &quot;Word&quot;)]" />
+    <ui:CreateDirectory ContinueOnError="{x:Null}" Output="{x:Null}" DisplayName="Create Excel Folder (Create Folder)" Path="[System.IO.Path.Combine(OrganizedFolder, &quot;Excel&quot;)]" />
+    <ui:CreateDirectory ContinueOnError="{x:Null}" Output="{x:Null}" DisplayName="Create PowerPoint Folder (Create Folder)" Path="[System.IO.Path.Combine(OrganizedFolder, &quot;PowerPoint&quot;)]" />
+    <ui:CreateDirectory ContinueOnError="{x:Null}" Output="{x:Null}" DisplayName="Create Photos Folder (Create Folder)" Path="[System.IO.Path.Combine(OrganizedFolder, &quot;Photos&quot;)]" />
+    <ui:CreateDirectory ContinueOnError="{x:Null}" Output="{x:Null}" DisplayName="Create Archives Folder (Create Folder)" Path="[System.IO.Path.Combine(OrganizedFolder, &quot;Archives&quot;)]" />
+    <ui:CreateDirectory ContinueOnError="{x:Null}" Output="{x:Null}" DisplayName="Create Installers Folder (Create Folder)" Path="[System.IO.Path.Combine(OrganizedFolder, &quot;Installers&quot;)]" />
+    <ui:CreateDirectory ContinueOnError="{x:Null}" Output="{x:Null}" DisplayName="Create Text Folder (Create Folder)" Path="[System.IO.Path.Combine(OrganizedFolder, &quot;Text&quot;)]" />
+    <ui:CreateDirectory ContinueOnError="{x:Null}" Output="{x:Null}" DisplayName="Create Other Folder (Create Folder)" Path="[System.IO.Path.Combine(OrganizedFolder, &quot;Other&quot;)]" />
+    <ui:LogMessage DisplayName="Log Start" Level="Info" Message="[&quot;File Organizer started. Source: &quot; &amp; SourceFolder &amp; &quot; | Destination: &quot; &amp; OrganizedFolder]" />
+    <ui:ForEachFileX DisplayName="For Each File in Folder" Folder="[SourceFolder]" IncludeSubDirectories="False" OrderBy="NameAscFirst" SkipFolderWithoutPermission="False">
+      <ui:ForEachFileX.Body>
+        <ActivityAction x:TypeArguments="si:FileInfo, x:Int32">
+          <ActivityAction.Argument1>
+            <DelegateInArgument x:TypeArguments="si:FileInfo" Name="CurrentFile" />
+          </ActivityAction.Argument1>
+          <ActivityAction.Argument2>
+            <DelegateInArgument x:TypeArguments="x:Int32" Name="CurrentIndex" />
+          </ActivityAction.Argument2>
+          <Sequence DisplayName="Do">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Assign DisplayName="Count File (Assign)">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:Int32">[FilesTotal]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:Int32">[FilesTotal + 1]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <TryCatch DisplayName="Process File Safely (Try Catch)">
+              <TryCatch.Try>
+              <Sequence DisplayName="Process File">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <Assign DisplayName="Get File Extension (Assign)">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:String">[Extension]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:String">[CurrentFile.Extension.ToLowerInvariant()]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <If Condition="[{&quot;.crdownload&quot;, &quot;.part&quot;, &quot;.partial&quot;, &quot;.tmp&quot;, &quot;.download&quot;}.Contains(Extension) OrElse CurrentFile.Name.Equals(&quot;desktop.ini&quot;, StringComparison.OrdinalIgnoreCase) OrElse (CurrentFile.Attributes And System.IO.FileAttributes.Hidden) = System.IO.FileAttributes.Hidden]" DisplayName="Skip Partial / Hidden Files (If)">
+                  <If.Then>
+                    <Sequence DisplayName="Skip File">
+                      <ui:LogMessage DisplayName="Log Skipped File" Level="Info" Message="[&quot;Skipped (partial download, temp or hidden file): &quot; &amp; CurrentFile.Name]" />
+                      <Assign DisplayName="Count Skipped (Assign)">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:Int32">[FilesSkipped]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:Int32">[FilesSkipped + 1]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                    </Sequence>
+                  </If.Then>
+                  <If.Else>
+                  <Sequence DisplayName="Move File To Category">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <Switch x:TypeArguments="x:String" DisplayName="Choose Category By Extension (Switch)" Expression="[Extension]">
+                      <Switch.Default>
+                        <Assign DisplayName="Other (Assign)">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:String">[DestinationFolder]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:String">[System.IO.Path.Combine(OrganizedFolder, "Other")]</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                      </Switch.Default>
+                      <Assign x:Key=".pdf" DisplayName="PDF (.pdf)">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[DestinationFolder]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">[System.IO.Path.Combine(OrganizedFolder, "PDF")]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <Assign x:Key=".doc" DisplayName="Word (.doc)">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[DestinationFolder]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">[System.IO.Path.Combine(OrganizedFolder, "Word")]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <Assign x:Key=".docx" DisplayName="Word (.docx)">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[DestinationFolder]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">[System.IO.Path.Combine(OrganizedFolder, "Word")]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <Assign x:Key=".rtf" DisplayName="Word (.rtf)">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[DestinationFolder]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">[System.IO.Path.Combine(OrganizedFolder, "Word")]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <Assign x:Key=".odt" DisplayName="Word (.odt)">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[DestinationFolder]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">[System.IO.Path.Combine(OrganizedFolder, "Word")]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <Assign x:Key=".xls" DisplayName="Excel (.xls)">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[DestinationFolder]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">[System.IO.Path.Combine(OrganizedFolder, "Excel")]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <Assign x:Key=".xlsx" DisplayName="Excel (.xlsx)">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[DestinationFolder]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">[System.IO.Path.Combine(OrganizedFolder, "Excel")]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <Assign x:Key=".xlsm" DisplayName="Excel (.xlsm)">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[DestinationFolder]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">[System.IO.Path.Combine(OrganizedFolder, "Excel")]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <Assign x:Key=".csv" DisplayName="Excel (.csv)">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[DestinationFolder]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">[System.IO.Path.Combine(OrganizedFolder, "Excel")]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <Assign x:Key=".ods" DisplayName="Excel (.ods)">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[DestinationFolder]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">[System.IO.Path.Combine(OrganizedFolder, "Excel")]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <Assign x:Key=".ppt" DisplayName="PowerPoint (.ppt)">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[DestinationFolder]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">[System.IO.Path.Combine(OrganizedFolder, "PowerPoint")]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <Assign x:Key=".pptx" DisplayName="PowerPoint (.pptx)">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[DestinationFolder]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">[System.IO.Path.Combine(OrganizedFolder, "PowerPoint")]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <Assign x:Key=".odp" DisplayName="PowerPoint (.odp)">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[DestinationFolder]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">[System.IO.Path.Combine(OrganizedFolder, "PowerPoint")]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <Assign x:Key=".jpg" DisplayName="Photos (.jpg)">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[DestinationFolder]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">[System.IO.Path.Combine(OrganizedFolder, "Photos")]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <Assign x:Key=".jpeg" DisplayName="Photos (.jpeg)">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[DestinationFolder]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">[System.IO.Path.Combine(OrganizedFolder, "Photos")]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <Assign x:Key=".png" DisplayName="Photos (.png)">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[DestinationFolder]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">[System.IO.Path.Combine(OrganizedFolder, "Photos")]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <Assign x:Key=".gif" DisplayName="Photos (.gif)">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[DestinationFolder]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">[System.IO.Path.Combine(OrganizedFolder, "Photos")]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <Assign x:Key=".bmp" DisplayName="Photos (.bmp)">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[DestinationFolder]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">[System.IO.Path.Combine(OrganizedFolder, "Photos")]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <Assign x:Key=".webp" DisplayName="Photos (.webp)">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[DestinationFolder]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">[System.IO.Path.Combine(OrganizedFolder, "Photos")]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <Assign x:Key=".tif" DisplayName="Photos (.tif)">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[DestinationFolder]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">[System.IO.Path.Combine(OrganizedFolder, "Photos")]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <Assign x:Key=".tiff" DisplayName="Photos (.tiff)">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[DestinationFolder]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">[System.IO.Path.Combine(OrganizedFolder, "Photos")]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <Assign x:Key=".svg" DisplayName="Photos (.svg)">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[DestinationFolder]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">[System.IO.Path.Combine(OrganizedFolder, "Photos")]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <Assign x:Key=".heic" DisplayName="Photos (.heic)">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[DestinationFolder]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">[System.IO.Path.Combine(OrganizedFolder, "Photos")]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <Assign x:Key=".zip" DisplayName="Archives (.zip)">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[DestinationFolder]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">[System.IO.Path.Combine(OrganizedFolder, "Archives")]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <Assign x:Key=".rar" DisplayName="Archives (.rar)">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[DestinationFolder]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">[System.IO.Path.Combine(OrganizedFolder, "Archives")]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <Assign x:Key=".7z" DisplayName="Archives (.7z)">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[DestinationFolder]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">[System.IO.Path.Combine(OrganizedFolder, "Archives")]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <Assign x:Key=".tar" DisplayName="Archives (.tar)">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[DestinationFolder]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">[System.IO.Path.Combine(OrganizedFolder, "Archives")]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <Assign x:Key=".gz" DisplayName="Archives (.gz)">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[DestinationFolder]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">[System.IO.Path.Combine(OrganizedFolder, "Archives")]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <Assign x:Key=".tgz" DisplayName="Archives (.tgz)">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[DestinationFolder]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">[System.IO.Path.Combine(OrganizedFolder, "Archives")]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <Assign x:Key=".bz2" DisplayName="Archives (.bz2)">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[DestinationFolder]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">[System.IO.Path.Combine(OrganizedFolder, "Archives")]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <Assign x:Key=".xz" DisplayName="Archives (.xz)">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[DestinationFolder]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">[System.IO.Path.Combine(OrganizedFolder, "Archives")]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <Assign x:Key=".exe" DisplayName="Installers (.exe)">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[DestinationFolder]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">[System.IO.Path.Combine(OrganizedFolder, "Installers")]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <Assign x:Key=".msi" DisplayName="Installers (.msi)">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[DestinationFolder]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">[System.IO.Path.Combine(OrganizedFolder, "Installers")]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <Assign x:Key=".msix" DisplayName="Installers (.msix)">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[DestinationFolder]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">[System.IO.Path.Combine(OrganizedFolder, "Installers")]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <Assign x:Key=".txt" DisplayName="Text (.txt)">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[DestinationFolder]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">[System.IO.Path.Combine(OrganizedFolder, "Text")]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <Assign x:Key=".log" DisplayName="Text (.log)">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[DestinationFolder]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">[System.IO.Path.Combine(OrganizedFolder, "Text")]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <Assign x:Key=".md" DisplayName="Text (.md)">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[DestinationFolder]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">[System.IO.Path.Combine(OrganizedFolder, "Text")]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <Assign x:Key=".json" DisplayName="Text (.json)">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[DestinationFolder]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">[System.IO.Path.Combine(OrganizedFolder, "Text")]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <Assign x:Key=".xml" DisplayName="Text (.xml)">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[DestinationFolder]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">[System.IO.Path.Combine(OrganizedFolder, "Text")]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                    </Switch>
+                    <Assign DisplayName="Build Destination Path (Assign)">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:String">[DestinationFile]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:String">[System.IO.Path.Combine(DestinationFolder, CurrentFile.Name)]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                    <Assign DisplayName="Reset Collision Index (Assign)">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:Int32">[CollisionIndex]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:Int32">[0]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                    <While Condition="[System.IO.File.Exists(DestinationFile)]" DisplayName="Find Free File Name (While)">
+                      <Sequence DisplayName="Try Next Name">
+                        <Assign DisplayName="Next Collision Index (Assign)">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:Int32">[CollisionIndex]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:Int32">[CollisionIndex + 1]</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                        <Assign DisplayName="Build Renamed Path (Assign)">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:String">[DestinationFile]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:String">[System.IO.Path.Combine(DestinationFolder, System.IO.Path.GetFileNameWithoutExtension(CurrentFile.Name) &amp; " (" &amp; CollisionIndex.ToString() &amp; ")" &amp; CurrentFile.Extension)]</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                      </Sequence>
+                    </While>
+                    <ui:MoveFile ContinueOnError="{x:Null}" DestinationResource="{x:Null}" PathResource="{x:Null}" Destination="[DestinationFile]" DisplayName="Move File" Overwrite="False" Path="[CurrentFile.FullName]" />
+                    <Assign DisplayName="Count Moved (Assign)">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:Int32">[FilesMoved]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:Int32">[FilesMoved + 1]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                    <If Condition="[CollisionIndex &gt; 0]" DisplayName="Was Renamed? (If)">
+                      <If.Then>
+                        <Sequence DisplayName="Record Rename">
+                          <ui:LogMessage DisplayName="Log Renamed File" Level="Warn" Message="[&quot;Name already existed, renamed: &quot; &amp; CurrentFile.Name &amp; &quot; -&gt; &quot; &amp; System.IO.Path.GetFileName(DestinationFile)]" />
+                          <Assign DisplayName="Count Renamed (Assign)">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="x:Int32">[FilesRenamed]</OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="x:Int32">[FilesRenamed + 1]</InArgument>
+                            </Assign.Value>
+                          </Assign>
+                        </Sequence>
+                      </If.Then>
+                    </If>
+                    <ui:LogMessage DisplayName="Log Moved File" Level="Info" Message="[&quot;Moved: &quot; &amp; CurrentFile.Name &amp; &quot; -&gt; &quot; &amp; DestinationFile]" />
+                  </Sequence>
+                  </If.Else>
+                </If>
+              </Sequence>
+              </TryCatch.Try>
+              <TryCatch.Catches>
+                <Catch x:TypeArguments="s:Exception">
+                  <ActivityAction x:TypeArguments="s:Exception">
+                    <ActivityAction.Argument>
+                      <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                    </ActivityAction.Argument>
+                    <Sequence DisplayName="Handle File Error">
+                      <ui:LogMessage DisplayName="Log Failed File" Level="Error" Message="[&quot;Failed to move &quot; &amp; CurrentFile.Name &amp; &quot;: &quot; &amp; exception.Message]" />
+                      <Assign DisplayName="Count Failed (Assign)">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:Int32">[FilesFailed]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:Int32">[FilesFailed + 1]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                    </Sequence>
+                  </ActivityAction>
+                </Catch>
+              </TryCatch.Catches>
+            </TryCatch>
+          </Sequence>
+        </ActivityAction>
+      </ui:ForEachFileX.Body>
+    </ui:ForEachFileX>
+    <If Condition="[FilesFailed &gt; 0]" DisplayName="Report Summary (If)">
+      <If.Then>
+        <ui:LogMessage DisplayName="Log Summary With Failures" Level="Warn" Message="[&quot;File Organizer finished. Total: &quot; &amp; FilesTotal.ToString() &amp; &quot; | Moved: &quot; &amp; FilesMoved.ToString() &amp; &quot; (renamed to avoid overwrite: &quot; &amp; FilesRenamed.ToString() &amp; &quot;)&quot; &amp; &quot; | Skipped: &quot; &amp; FilesSkipped.ToString() &amp; &quot; | Failed: &quot; &amp; FilesFailed.ToString() &amp; &quot; - check the log for failed files.&quot;]" />
+      </If.Then>
+      <If.Else>
+        <ui:LogMessage DisplayName="Log Summary" Level="Info" Message="[&quot;File Organizer finished. Total: &quot; &amp; FilesTotal.ToString() &amp; &quot; | Moved: &quot; &amp; FilesMoved.ToString() &amp; &quot; (renamed to avoid overwrite: &quot; &amp; FilesRenamed.ToString() &amp; &quot;)&quot; &amp; &quot; | Skipped: &quot; &amp; FilesSkipped.ToString() &amp; &quot; | Failed: &quot; &amp; FilesFailed.ToString()]" />
+      </If.Else>
+    </If>
+  </Sequence>
+</Activity>
