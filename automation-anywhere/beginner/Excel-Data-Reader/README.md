@@ -1,91 +1,96 @@
-# AA-01 — Excel Data Reader & Salary Classifier
+<div align="center">
 
-> An Automation Anywhere Automation 360 bot for reading employee records from Excel, processing salary data, applying business rules, and displaying the processed results.
+# 👥 Excel Data Reader & Salary Classifier
 
----
+### AA-01 · Automation Anywhere Automation 360
 
-## Overview
+![Automation Anywhere](https://img.shields.io/badge/Automation%20Anywhere-Automation%20360-F26B21?style=for-the-badge)
+![Excel](https://img.shields.io/badge/Microsoft-Excel-217346?style=for-the-badge&logo=microsoftexcel&logoColor=white)
+![Level](https://img.shields.io/badge/Level-1%20Beginner-blue?style=for-the-badge)
+![Status](https://img.shields.io/badge/Status-Completed%20v1-brightgreen?style=for-the-badge)
 
-**AA-01 — Excel Data Reader & Salary Classifier** is a Level 1 Automation Anywhere project focused on structured Excel data processing.
+*Read employee records from Excel, convert salaries to numbers, classify them with business rules, and display every processed record.*
 
-The bot reads employee records from an Excel workbook, stores the extracted dataset in a Data Table, iterates through each employee record using a Record variable, converts salary values to numeric values, applies salary-based classification rules, and displays the processed result.
+[Overview](#-overview) •
+[Input & Output](#-input--output) •
+[Architecture](#-architecture) •
+[Step-by-Step](#-step-by-step-processing) •
+[Screenshots](#-screenshots) •
+[Roadmap](#-limitations--roadmap)
 
-The implementation demonstrates the core building blocks used in larger RPA workflows: data extraction, structured variables, iteration, type conversion, conditional logic, and result presentation.
-
----
-
-## Objective
-
-The project demonstrates how Automation Anywhere can be used to:
-
-- Read structured data from Excel.
-- Store tabular data using Data Table variables.
-- Iterate through individual records.
-- Access fields using Record variables.
-- Convert values between data types.
-- Apply deterministic business rules.
-- Present processed results.
-- Organize an RPA project in a maintainable repository structure.
+</div>
 
 ---
 
-## Technology Stack
+## 📖 Overview
+
+**AA-01** is a Level 1 Automation Anywhere project focused on structured Excel data processing.
+
+The bot reads employee records from an Excel workbook, stores them in a **Data Table**, iterates through each row using a **Record variable**, converts salary values to numeric type, applies salary-based classification rules, and displays the processed result.
+
+It demonstrates the core building blocks of larger RPA workflows: data extraction, structured variables, iteration, type conversion, conditional logic, and result presentation.
+
+---
+
+## 🎯 Objectives
+
+| | Objective |
+|---|---|
+| 📥 | Read structured data from Excel |
+| 🗃️ | Store tabular data in Data Table variables |
+| 🔁 | Iterate through individual records |
+| 🏷️ | Access fields by column name with Record variables |
+| 🔢 | Convert values between data types |
+| ⚖️ | Apply deterministic business rules |
+| 💬 | Present the processed results |
+| 📁 | Organize an RPA project in a maintainable repository |
+
+---
+
+## 🛠️ Technology Stack
 
 | Technology | Purpose |
-| --- | --- |
-| Automation Anywhere Automation 360 | RPA platform |
-| Microsoft Excel | Input data source |
-| Data Table | Stores the extracted worksheet data |
-| Record Variable | Represents the employee record being processed |
-| Iterator Loop | Processes records sequentially |
-| Conditional Logic | Applies salary classification rules |
+|---|---|
+| **Automation Anywhere Automation 360** | RPA platform |
+| **Microsoft Excel** | Input data source |
+| **Data Table** | Stores the extracted worksheet data |
+| **Record Variable** | Represents the employee currently being processed |
+| **Iterator Loop** | Processes records sequentially |
+| **Conditional Logic** | Applies salary classification rules |
 
 ---
 
-## Input
+## 📥 Input & Output
 
-The bot reads the following workbook:
+### Input
+
+The bot reads this workbook, treating the first row as the header:
 
 ```text
 input/employee_data.xlsx
 ```
 
-### Input Schema
-
 | Field | Description |
-| --- | --- |
+|---|---|
 | `Employee_ID` | Unique employee identifier |
 | `Name` | Employee name |
 | `Department` | Employee department |
 | `Salary` | Employee salary |
 | `Status` | Current employment status |
 
-The first row of the worksheet is treated as the column header.
-
----
-
-## Output
-
-The current implementation displays the processed employee record through an Automation Anywhere **Message Box** during execution.
-
-Each processed record contains:
-
-- Employee ID
-- Name
-- Department
-- Salary
-- Salary Classification
-- Employment Status
-
 ### Salary Classification Rules
 
 | Salary Range | Classification |
-| --- | --- |
-| `< 50,000` | `Low` |
-| `50,000 – < 80,000` | `Medium` |
-| `>= 80,000` | `High` |
+|---|:---:|
+| `< 50,000` | 🟡 `Low` |
+| `50,000 – < 80,000` | 🟠 `Medium` |
+| `>= 80,000` | 🟢 `High` |
 
-### Example
+### Output
+
+Each processed record is displayed in an Automation Anywhere **Message Box** during execution, containing: Employee ID, Name, Department, Salary, Salary Classification, and Employment Status.
+
+**Example:**
 
 ```text
 Employee ID: EMP001
@@ -96,148 +101,70 @@ Classification: Medium
 Status: Active
 ```
 
-> **Current implementation:** The bot does not generate a separate output Excel workbook. Results are displayed during execution.
+> 📌 **Current implementation:** the bot does not generate a separate output Excel workbook. Results are displayed during execution.
 
 ---
 
-## Architecture
+## 🏗️ Architecture
 
-The automation follows a sequential data-processing pipeline:
-
-```text
-┌──────────────────────────────┐
-│      Employee Excel File     │
-│      employee_data.xlsx      │
-└──────────────┬───────────────┘
-               │
-               ▼
-┌──────────────────────────────┐
-│        Excel Session         │
-│        employeeSession       │
-└──────────────┬───────────────┘
-               │
-               ▼
-┌──────────────────────────────┐
-│      Get Multiple Cells      │
-│          All Rows            │
-└──────────────┬───────────────┘
-               │
-               ▼
-┌──────────────────────────────┐
-│          Data Table          │
-│         employeeData         │
-└──────────────┬───────────────┘
-               │
-               ▼
-┌──────────────────────────────┐
-│      For Each Row in Table   │
-└──────────────┬───────────────┘
-               │
-               ▼
-┌──────────────────────────────┐
-│        Record Variable       │
-│        currentEmployee       │
-└──────────────┬───────────────┘
-               │
-               ├─────────────────────┐
-               │                     │
-               ▼                     ▼
-┌────────────────────────┐  ┌────────────────────────┐
-│ Extract Employee Data  │  │    Extract Salary      │
-└────────────────────────┘  └───────────┬────────────┘
-                                        │
-                                        ▼
-                             ┌────────────────────────┐
-                             │    String → Number     │
-                             │ employeeSalaryNumber   │
-                             └───────────┬────────────┘
-                                         │
-                                         ▼
-                             ┌────────────────────────┐
-                             │ Salary Classification  │
-                             │      IF / ELSE IF      │
-                             │         / ELSE         │
-                             └───────────┬────────────┘
-                                         │
-                                         ▼
-                             ┌────────────────────────┐
-                             │    Message Box Output  │
-                             └────────────────────────┘
+```mermaid
+flowchart TD
+    A[📗 employee_data.xlsx] --> B[Excel Session<br/>employeeSession]
+    B --> C[Get Multiple Cells<br/>All Rows]
+    C --> D[(Data Table<br/>employeeData)]
+    D --> E{{For Each Row in Table}}
+    E --> F[Record Variable<br/>currentEmployee]
+    F --> G[Extract Employee Data]
+    F --> H[Extract Salary]
+    H --> I[String → Number<br/>employeeSalaryNumber]
+    I --> J{Salary Classification}
+    J -- "&lt; 50,000" --> K[Low]
+    J -- "&lt; 80,000" --> L[Medium]
+    J -- "otherwise" --> M[High]
+    K --> N[💬 Message Box]
+    L --> N
+    M --> N
+    G --> N
+    N --> E
 ```
 
 ---
 
-## Processing
+## ⚙️ Step-by-Step Processing
 
-### 1. Open the Excel Workbook
+<details open>
+<summary><b>1️⃣ Open the Excel workbook</b></summary>
 
-The bot opens the input workbook using:
+<br/>
 
-```text
-Excel Advanced → Open
-```
+Uses `Excel Advanced → Open`. The session is stored in `employeeSession`, and the workbook is configured with a header row so fields can be accessed by column name.
 
-The Excel session is stored in:
+</details>
 
-```text
-employeeSession
-```
+<details open>
+<summary><b>2️⃣ Read employee records</b></summary>
 
-The workbook is configured to contain a header row, allowing employee fields to be accessed by column name.
+<br/>
 
----
+Uses `Excel Advanced → Get multiple cells` with range **All rows**. The result is assigned to the Data Table variable `employeeData`, which holds the complete set of employee records.
 
-### 2. Read Employee Records
+</details>
 
-The bot uses:
+<details open>
+<summary><b>3️⃣ Iterate through records</b></summary>
 
-```text
-Excel Advanced → Get multiple cells
-```
+<br/>
 
-The configured range is:
+An Iterator Loop set to **For each row in table** processes `employeeData`. On each iteration the current row is assigned to the Record variable `currentEmployee`.
 
-```text
-All rows
-```
+</details>
 
-The extracted worksheet data is assigned to the Data Table variable:
+<details open>
+<summary><b>4️⃣ Access employee fields</b></summary>
 
-```text
-employeeData
-```
+<br/>
 
-`employeeData` represents the complete set of employee records loaded from the workbook.
-
----
-
-### 3. Iterate Through Records
-
-The bot uses an Iterator Loop configured as:
-
-```text
-For each row in table
-```
-
-The iterator processes:
-
-```text
-employeeData
-```
-
-During each iteration, the current row is assigned to:
-
-```text
-currentEmployee
-```
-
-`currentEmployee` is a Record variable representing one employee at a time.
-
----
-
-### 4. Access Employee Fields
-
-Individual fields are accessed from the current Record variable using their Excel column names:
+Fields are read from the Record variable by their Excel column names, so no row positions are hard-coded:
 
 ```text
 $rCurrentEmployee{Employee_ID}$
@@ -247,33 +174,21 @@ $rCurrentEmployee{Salary}$
 $rCurrentEmployee{Status}$
 ```
 
-This allows the workflow to operate on each employee record without hard-coding row positions.
+</details>
 
----
+<details open>
+<summary><b>5️⃣ Convert salary</b></summary>
 
-### 5. Convert Salary
+<br/>
 
-The salary value is first assigned to:
+The salary is first assigned to `employeeSalary`, then converted from String to Number and stored in `employeeSalaryNumber`. This allows numeric comparison operators to be used.
 
-```text
-employeeSalary
-```
+</details>
 
-The value is then converted from a String to a Number.
+<details open>
+<summary><b>6️⃣ Apply salary classification</b></summary>
 
-The resulting numeric value is stored in:
-
-```text
-employeeSalaryNumber
-```
-
-Numeric conversion allows the salary to be evaluated using numerical comparison operators.
-
----
-
-### 6. Apply Salary Classification
-
-The numeric salary is evaluated using conditional logic:
+<br/>
 
 ```text
 IF employeeSalaryNumber < 50000
@@ -286,146 +201,68 @@ ELSE
     salaryClassification = "High"
 ```
 
-The resulting classification is stored in:
+</details>
 
-```text
-salaryClassification
-```
+<details open>
+<summary><b>7️⃣ Display the processed record</b></summary>
 
----
+<br/>
 
-### 7. Display the Processed Record
+A Message Box shows Employee ID, Name, Department, Salary, Classification, and Status. The loop then moves to the next record until every row in `employeeData` has been processed.
 
-The processed employee information is displayed using a Message Box.
-
-The displayed fields are:
-
-```text
-Employee ID
-Name
-Department
-Salary
-Classification
-Status
-```
-
-After displaying the result, the loop continues with the next employee record until all rows in `employeeData` have been processed.
+</details>
 
 ---
 
-## End-to-End Processing Flow
-
-```text
-Read Excel Workbook
-        │
-        ▼
-Create Excel Session
-        │
-        ▼
-Read All Employee Records
-        │
-        ▼
-Store Records in Data Table
-        │
-        ▼
-Iterate Through Each Record
-        │
-        ▼
-Extract Employee Fields
-        │
-        ▼
-Extract Salary
-        │
-        ▼
-Convert Salary to Number
-        │
-        ▼
-Apply Salary Classification
-        │
-        ▼
-Display Processed Record
-        │
-        ▼
-Process Next Record
-        │
-        ▼
-Repeat Until All Records Are Processed
-```
-
----
-
-## Repository Structure
+## 📁 Repository Structure
 
 ```text
 excel-data-reader/
 │
-├── README.md
+├── 📝 README.md
 │
-├── bot/
-│   └── <exported-bot>.json
+├── 📂 bot/
+│   └── <exported-bot>.json      # Exported Automation Anywhere bot
 │
-├── input/
-│   └── employee_data.xlsx
+├── 📂 input/
+│   └── employee_data.xlsx       # Dataset required by the automation
 │
-├── output/
-│   └── README.md
+├── 📂 output/
+│   └── README.md                # Documents current output behavior
 │
-└── screenshots/
-    ├── Dataset.png
-    └── Bot Workflow.png
+└── 📂 screenshots/
+    ├── Dataset.png              # Input dataset
+    └── Bot Workflow.png         # Bot workflow
 ```
 
-The `bot/` directory contains the exported Automation Anywhere bot JSON.
+---
 
-The `input/` directory contains the dataset required by the automation.
+## 🧠 Concepts Demonstrated
 
-The `output/` directory documents the current output behavior and can contain generated artifacts in future versions.
-
-The `screenshots/` directory contains visual evidence of the dataset, workflow configuration, and execution.
+![Excel session](https://img.shields.io/badge/-Excel%20session%20management-217346)
+![Data extraction](https://img.shields.io/badge/-Excel%20data%20extraction-217346)
+![Data Table](https://img.shields.io/badge/-Data%20Table%20variables-blue)
+![Record](https://img.shields.io/badge/-Record%20variables-blue)
+![Iterator](https://img.shields.io/badge/-Iterator%20loops-blue)
+![Column access](https://img.shields.io/badge/-Column--based%20record%20access-blue)
+![Conversion](https://img.shields.io/badge/-String%20to%20number%20conversion-orange)
+![Assignment](https://img.shields.io/badge/-Variable%20assignment-orange)
+![Branching](https://img.shields.io/badge/-Conditional%20branching-orange)
+![Message Box](https://img.shields.io/badge/-Message%20Box%20output-purple)
 
 ---
 
-## Automation Anywhere Concepts Demonstrated
-
-This project demonstrates:
-
-- Excel session management
-- Excel data extraction
-- Data Table variables
-- Record variables
-- Iterator-based loops
-- Column-based record access
-- String-to-number conversion
-- Variable assignment
-- Conditional branching
-- Message Box output
-- Bot execution and validation
-
----
-
-## Validation
+## ✅ Validation
 
 The bot was executed successfully against the employee dataset.
 
-The validated workflow is:
-
 ```text
-Excel Input
-    ↓
-Data Extraction
-    ↓
-Record Iteration
-    ↓
-Salary Conversion
-    ↓
-Salary Classification
-    ↓
-Processed Record Display
+Excel Input → Data Extraction → Record Iteration → Salary Conversion → Salary Classification → Processed Record Display
 ```
 
 ---
 
-## Screenshots
+## 📸 Screenshots
 
 ### Dataset
 
@@ -437,71 +274,50 @@ Processed Record Display
 
 ---
 
-## Limitations
+## 🚧 Limitations & Roadmap
 
-The current implementation intentionally focuses on the core Excel-reading and record-processing workflow.
+Version 1 intentionally focuses on the core Excel-reading and record-processing workflow.
 
-Current limitations:
+### Current limitations
 
-- No generated output Excel report.
-- No automated email delivery.
-- No external database integration.
-- No advanced exception-handling workflow.
-- Salary thresholds are currently hard-coded.
-- No aggregated salary statistics.
+- No generated output Excel report
+- No automated email delivery
+- No external database integration
+- No advanced exception handling
+- Salary thresholds are hard-coded
+- No aggregated salary statistics
 
-These limitations define the scope of Version 1 and provide clear extension points for future iterations.
+### Planned enhancements
 
----
-
-## Future Enhancements
-
-### Output Report
-
-Generate a processed Excel workbook containing the original employee data and the calculated classification.
-
-### Data Validation
-
-Add validation for:
-
-- Missing employee IDs
-- Empty employee names
-- Invalid departments
-- Missing salary values
-- Non-numeric salary values
-
-### Analytics
-
-Generate:
-
-- Average salary
-- Department-wise salary statistics
-- Employee counts by classification
-- Active versus inactive employee summaries
-
-### Reporting
-
-Generate and distribute an automated employee salary report through email.
-
-### Configuration
-
-Move salary classification thresholds into a configuration file so business rules can be modified without changing the bot workflow.
+- [ ] **Output report:** generate an Excel workbook with the original data plus the calculated classification
+- [ ] **Data validation:** check for missing IDs, empty names, invalid departments, missing or non-numeric salaries
+- [ ] **Analytics:** average salary, department-wise statistics, counts by classification, active vs. inactive summaries
+- [ ] **Reporting:** email an automated salary report
+- [ ] **Configuration:** move thresholds into a config file so rules change without editing the bot
 
 ---
 
-## Project Status
+## 📊 Project Status
 
 | Attribute | Value |
-| --- | --- |
-| Status | Completed — Version 1 |
-| Project Level | Level 1 — Beginner |
-| Platform | Automation Anywhere Automation 360 |
-| Domain | Robotic Process Automation |
-| Input | Excel workbook |
-| Output | Message Box |
+|---|---|
+| **Status** | ✅ Completed — Version 1 |
+| **Project level** | Level 1 — Beginner |
+| **Platform** | Automation Anywhere Automation 360 |
+| **Domain** | Robotic Process Automation |
+| **Input** | Excel workbook |
+| **Output** | Message Box |
 
 ---
 
-## Author
+## 👩‍💻 Author
 
-Developed as part of an Automation Anywhere RPA portfolio, demonstrating practical experience with Excel automation, structured data processing, workflow design, and business-rule implementation. And it is done by me.
+Developed as part of an Automation Anywhere RPA portfolio, demonstrating practical experience with Excel automation, structured data processing, workflow design, and business-rule implementation.
+
+---
+
+<div align="center">
+
+⭐ If you found this project useful, consider giving it a star!
+
+</div>
