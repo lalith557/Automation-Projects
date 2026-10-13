@@ -1,0 +1,27 @@
+# ==========================================
+# UiPath generated and local metadata
+# ==========================================
+**/.local/
+**/.project/
+**/.settings/
+**/.tmh/
+
+# UiPath generated build artifacts
+**/bin/
+**/obj/
+**/.vs/
+
+# ==========================================
+# Operating system files
+# ==========================================
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# ==========================================
+# Editor and temporary files
+# ==========================================
+*.tmp
+*.temp
+*.bak
+*.swp
